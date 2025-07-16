@@ -1,0 +1,63 @@
+using System;
+public class Demo // publisher class 
+{
+
+// events is mechanism for communication between objects 
+// the class that sends or  raise event is called publisher and class which recieve or handle the events are called subscriber 
+//event internally uses delegate
+// to subscribe a  event that should be done with the method
+// create one instance and share with other class because every instance has a separate event
+
+    public delegate void MyDelegate();
+    public static  event MyDelegate MyEvent;
+
+    public void RaiseEvent()
+
+    {
+        if (MyEvent != null)
+        {
+            MyEvent();
+        }
+    }
+}
+
+using System;
+    public  class Class1 // subscriber class
+    { 
+        public void Sub() {
+       
+        Demo.MyEvent += Subscriber;
+
+    }
+
+    public void Subscriber()
+    {
+        Console.WriteLine("first subscriber");
+    }
+
+}
+
+
+    public  class Class2
+    {
+       
+        public void Sub()
+        {
+            Demo.MyEvent += Subscriber2;
+        }
+        public void Subscriber2()
+        {
+            Console.WriteLine("Subscriber 2");
+        }
+    
+    public static void Main(string[] args)
+    {
+// first the sub method should be invooked to subcribe to the event and particular event should be called
+        Class1 class1 = new Class1();   
+        Class2 class2 = new Class2();
+        class1.Sub();
+        class2.Sub();
+        Demo demo = new Demo();
+        demo.RaiseEvent();
+    }
+}

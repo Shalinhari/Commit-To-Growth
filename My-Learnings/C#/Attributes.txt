@@ -1,0 +1,30 @@
+using System;
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        AttributeProgram.Add(10, 20);
+    }
+}
+class AttributeProgram 
+{
+    // attribute is to add declarative information to the program 
+    //they are pre defined attributes provided by .net 
+    // obsolete attribute is used to mention that avoid using this method and bool value will return an error 
+    //[Obsolete("use Add(List<int>),true ")] this return an error.
+
+    [Obsolete("use Add(List<int>) ")]
+    public static void Add(int a ,int b)
+    {
+        Console.WriteLine(a + b);
+    }
+    public static void Add(List<int > numbers)
+    {
+        int sum = 0;
+        foreach(int i in numbers)
+        {
+            sum += i;
+        }
+        Console.WriteLine(sum);
+    }
+}

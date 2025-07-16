@@ -1,0 +1,110 @@
+using System;
+
+public class RPS
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("---WELCOME TO THE GAME---");
+        Random r = new Random();
+        string[] check = { "STONE", "PAPER", "SCISSORS" };
+        int i = 0;
+        int playerScore = 0;
+        int computerScore = 0;
+
+        while (true)
+        {
+            Console.WriteLine("Enter the value");
+            Console.WriteLine("1-Stone , 2-Paper, 3-Scissors");
+            int choice = int.Parse(Console.ReadLine());
+
+            string playerChoice = check[choice - 1];
+            int index = r.Next(check.Length);
+            string computerChoice = check[index];
+
+            if (choice == 1)
+            {
+                if (computerChoice.Equals("PAPER"))
+                {
+                    computerScore++;
+                    i++;
+                    Console.WriteLine("Computer wins--");
+                }
+                else if (computerChoice.Equals("SCISSORS"))
+                {
+                    playerScore++;
+                    i++;
+                    Console.WriteLine("Player wins--");
+                }
+                else
+                {
+                    Console.WriteLine("DRAW");
+                    i++;
+                }
+            }
+            else if (choice == 2)
+            {
+                if (computerChoice.Equals("SCISSORS"))
+                {
+                    computerScore++;
+                    i++;
+                    Console.WriteLine("Computer wins--");
+                }
+                else if (computerChoice.Equals("STONE"))
+                {
+                    playerScore++;
+                    i++;
+                    Console.WriteLine("Player wins--");
+                }
+                else
+                {
+                    Console.WriteLine("DRAW");
+                    i++;
+                }
+            }
+            else if (choice == 3)
+            {
+                if (computerChoice.Equals("STONE"))
+                {
+                    computerScore++;
+                    i++;
+                    Console.WriteLine("Computer wins--");
+                }
+                else if (computerChoice.Equals("PAPER"))
+                {
+                    playerScore++;
+                    i++;
+                    Console.WriteLine("Player wins--");
+                }
+                else
+                {
+                    Console.WriteLine("DRAW");
+                    i++;
+                }
+            }
+
+            Console.WriteLine($"Player: {playerScore} - Computer: {computerScore}");
+
+            if (computerScore == 3)
+            {
+                Console.WriteLine("-------------------------");
+                Console.WriteLine("COMPUTER WON THE GAME");
+                Console.WriteLine("--------------------------");
+                break;
+            }
+            else if (playerScore == 3)
+            {
+                Console.WriteLine("---------------------");
+                Console.WriteLine("PLAYER WON THE GAME");
+                Console.WriteLine("--------------------");
+                break;
+            }
+            else if (i == 5)
+            {
+                Console.WriteLine("------------");
+                Console.WriteLine("MATCH DRAW");
+                Console.WriteLine("-------------");
+                break;
+            }
+        }
+    }
+}

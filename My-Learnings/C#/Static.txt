@@ -1,0 +1,21 @@
+using System;
+static class Example{
+    private static int count=0;
+  public  static int GetStatic(){
+         return count;
+    }
+    public static void Increment(){
+        count++;
+    }
+}
+public class program{
+    public static void Main(string[]args){
+        Example.Increment();
+        int number =Example.GetStatic();
+     //   Console.WriteLine(number);
+        Example.Increment();
+        Example.Increment();
+        number=Example.GetStatic();
+        Console.WriteLine(number);
+    }
+}

@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class LinqProgram
+{
+    public static void Main(string[] args)
+    {
+        List<string> li = new List<string>
+        {
+            "java",
+            "python",
+            "c sharp",
+            "dot net"
+        };
+
+        var r = from l in li
+                where l.Contains("java")
+                select l;
+
+        foreach (var i in r)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}

@@ -1,0 +1,17 @@
+using System;
+public class Listprogram
+{
+    public static void Main(string[] args)
+    {
+        List<string>ls=new List<string>();
+        ls.Add("hi");
+        ls.Add("everyone");
+        ls.Add("welcome");
+        ls.Add("you");
+        ls.Add("all");
+        foreach(string s in ls)
+        {
+            Console.WriteLine(s);
+        }
+    }
+}

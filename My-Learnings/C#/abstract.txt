@@ -1,0 +1,31 @@
+using System;
+public  abstract class Car
+{
+   public abstract void Start();
+}
+public abstract class Bike:Car
+{
+    public abstract void Stop();
+    public  void ready()
+    {
+        Console.WriteLine("hello");
+    }
+}
+public class Cycle : Bike
+{
+    public override void Start()
+    {
+        Console.WriteLine("Starting");
+    }
+
+    public override void Stop()
+    {
+        Console.WriteLine("Stopping");
+    }
+    public static void Main(string[] args)
+    {
+        Cycle cycle = new Cycle();
+        cycle.Start();
+        cycle.ready();
+    }
+}

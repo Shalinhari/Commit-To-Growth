@@ -1,0 +1,88 @@
+using System;
+class XO{
+static char[] arr=new char[9];
+static int len=arr.Length;
+static void IniBoard(){
+    for(int i=0;i<len;i++){
+        arr[i]='_';
+        if(i%3==2){
+            Console.WriteLine(arr[i]);
+        }else{
+            Console.Write(arr[i]+" ");
+        }
+    }
+}
+static void Board(){
+    for(int i=0;i<len;i++){
+        if(i%3==2){
+            Console.WriteLine(arr[i]);
+        }else{
+            Console.Write(arr[i]+" ");
+        }
+    }
+}
+public static void Main(string[]args){
+   IniBoard();
+   bool winner=false;
+   int i=0;
+   int count=0;
+   int temp=0;
+   Console.WriteLine();
+   Console.WriteLine("--THE GAME STARTS--");
+   Console.WriteLine();
+   while(!winner){
+       if(i%2==0){
+           Console.WriteLine("Player X enter the position");
+           temp=0;
+           i++;
+       }else if(1%2==1){
+           Console.WriteLine("Player O enter the Position");
+           temp=1;
+           i++;
+       }
+       int n=Convert.ToInt32(Console.ReadLine());
+       if(arr[n-1]=='_' && temp==0){
+           arr[n-1]='X';
+           count++;
+           Board();
+       }else if(arr[n-1]=='_' && temp==1){
+           arr[n-1]='O';
+           count++;
+           Board();
+       }else{
+           Console.WriteLine("Enter the  position from 1 to 9");
+           i--;
+       }
+       if((arr[0]=='X' && arr[1]=='X' && arr[2]=='X')||
+        (arr[3]=='X' && arr[4]=='X'&& arr[5]=='X')||
+       ( arr[6]=='X' && arr[7]=='X' && arr[8]=='X')||
+       ( arr[2]=='X' && arr[4]=='X' && arr[6]=='X')||
+       ( arr[0]=='X' && arr[4]=='X' && arr[8]=='X')||
+       ( arr[0]=='X' && arr[3]=='X' && arr[6]=='X')||
+       ( arr[1]=='X' && arr[4]=='X' && arr[7]=='X')||
+       ( arr[2]=='X' && arr[5]=='X' && arr[8]=='X')){
+           
+           Console.WriteLine("---- X player wins !---");
+           winner = true;
+           break;
+       }
+       if((arr[0]=='O' && arr[1]=='O' && arr[2]=='O')||
+        (arr[3]=='O' && arr[4]=='O' && arr[5]=='O')||
+       ( arr[6]=='O' && arr[7]=='O' && arr[8]=='O')||
+       ( arr[2]=='O' && arr[4]=='O' && arr[6]=='O')||
+       ( arr[0]=='O' && arr[4]=='O' && arr[8]=='O')||
+       ( arr[0]=='O' && arr[3]=='O' && arr[6]=='O')||
+       ( arr[1]=='O' && arr[4]=='O' && arr[7]=='O')||
+       ( arr[2]=='O' && arr[5]=='O' && arr[8]=='O')){
+           
+           Console.WriteLine("--- O player wins !---");
+           winner = true;
+           break;
+       }
+       if(count==9){
+           Console.WriteLine("---MATCH DRAW---");
+           break;
+       }
+   }
+}
+}

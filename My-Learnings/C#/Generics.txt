@@ -1,0 +1,43 @@
+using System;
+public class GenericProgram<T>
+{
+    private T value1;
+    public void SetValue1(T value1)
+    {
+        this.value1 = value1;
+    }
+    public T GetValue1()
+    {
+        return this.value1;
+    }
+    public void GenericMethod<T>(T message)
+    {
+        Console.WriteLine(message);
+    }
+}
+class Program {
+    private int value2;
+    public void SetValue2(int value2)
+    {
+        this.value2 = value2;
+    }
+    public int GetValue2()
+    {
+        return this.value2;
+    }
+
+    public static void Main(string[] args)
+    {
+        Program obj1= new Program();
+        obj1.SetValue2(2);
+        GenericProgram<int> obj = new GenericProgram<int>();
+        obj.SetValue1(15);
+        int sum = obj.GetValue1();
+        if(obj.GetValue1() > obj1.GetValue2())
+        {
+            Console.WriteLine("succesfull");
+        }
+        Console.WriteLine(obj.GetValue1());
+        obj.GenericMethod("---Generic Method--");
+    }
+}

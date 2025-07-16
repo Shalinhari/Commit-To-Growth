@@ -1,0 +1,25 @@
+using System;
+public class OperatorOverloading
+{
+    private int number;
+    public OperatorOverloading(int a)
+    {
+        number = a;
+    }
+    public int GetNumber()
+    {
+        return number;
+    }
+    public static OperatorOverloading operator +(OperatorOverloading a, OperatorOverloading b)
+    {
+        int sum = a.GetNumber() + b.GetNumber();
+        return new OperatorOverloading(sum);
+    }
+    static void Main(string[] args)
+    {
+        OperatorOverloading obj = new OperatorOverloading(3);
+        OperatorOverloading obj1 = new OperatorOverloading(1);
+        OperatorOverloading result = obj + obj1;
+        Console.WriteLine("OPERATOR OVERLOADING:" + result.GetNumber());
+    }
+}

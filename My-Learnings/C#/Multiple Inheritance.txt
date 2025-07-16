@@ -1,0 +1,25 @@
+using System;
+interface ICar
+{
+    void Start();
+}
+public class Bike
+{
+    public void Off()
+    {
+        Console.WriteLine("---");
+    }
+}
+public class Truck : Bike, ICar
+{
+  public static void Main(string[] args)
+    {
+        Truck truck=new Truck();
+        truck.Off();
+        truck.Start();
+    }
+    public void Start()
+    {
+        Console.WriteLine("Implemented Method");
+    }
+}

@@ -1,0 +1,25 @@
+using System;
+
+public class HelloWorld
+{
+    static void AgeVerification(int age){
+         if(age>=18 && age<=60){
+            Console.WriteLine("You are eligible");
+        }else if(age<5){
+            Console.WriteLine("Babies are not allowed");
+        }else if(age>60){
+            Console.WriteLine("You are not eligible");
+        }else if(age>10 && age < 18){
+            Console.WriteLine("You are eligible");
+        }else{
+            Console.WriteLine("Age Doesn't Match for verification plz re enter");
+        }
+    }
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Welcome to Movie Ticket:");
+        Console.WriteLine("Enter your age for verification:");
+        int age=Convert.ToInt32(Console.ReadLine());
+        AgeVerification(age);
+        }
+}

@@ -1,0 +1,67 @@
+using System;
+using System.Reflection;
+
+namespace Reflection
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            // reflection is the ability to inspecting assemblies meta data at runtime
+            // meta data contains the information about type , what are the members, methods , constructors
+            
+            Type T = typeof(Reflection.Example);
+            //Type T = T.GetType(); the parameter must be in string but same functionalities
+
+            Console.WriteLine(T.FullName+" - fullname");
+            Console.WriteLine(T.Name+" - name");
+            Console.WriteLine(T.AssemblyQualifiedName+"- assembly qualified name");
+            Console.WriteLine(T.Namespace+" - namespace");
+             
+            Console.WriteLine();
+
+            ConstructorInfo[] constructor = T.GetConstructors();
+            foreach(ConstructorInfo constructors in constructor)
+            {
+                Console.WriteLine($"{constructors.Name}");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("METHOD");
+            MethodInfo[] methods = T.GetMethods();
+            foreach(MethodInfo method in methods)
+            {
+                 Console.WriteLine(method.Name+" "+method.ReturnType+" "+method.IsVirtual);
+            }
+
+           
+
+        }
+    }
+
+    class Example
+    {
+        private int id;
+        private string name;
+
+        public Example()
+        {
+
+        }
+        public Example(int id, string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
+        public int getId()
+        {
+            return id;
+        }
+        public string getName()
+        {
+            return name;
+        }
+    }
+}
+

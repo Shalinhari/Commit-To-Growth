@@ -1,0 +1,22 @@
+using System;
+public class ErrorHandling{
+    public static void Main(string[]args){
+        Console.WriteLine("Using Try catch");
+        try{
+        int [] array={1,2,3,4,5};
+        array[10]=10;
+        }
+        catch(Exception e){
+            Console.WriteLine(e.Message);
+        }
+        Console.WriteLine("------------------------");
+        Console.WriteLine("Using Throws");
+        Console.WriteLine("Enter the a Number");
+        int number=Convert.ToInt32(Console.ReadLine());
+        if(number<0){
+            throw new DivideByZeroException("Enter a positive number");
+        }else{
+            Console.WriteLine("THE NUMBER IS {0}",number);
+        }
+    }
+}

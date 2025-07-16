@@ -1,0 +1,29 @@
+using System;
+enum Status{
+    avaliable,
+    leave,
+    holiday,
+    Wfh
+}
+class Program{
+   public static void Main(string[]args){
+        Status status = Status.leave;
+        switch(status){
+            case Status.leave:
+            Console.WriteLine("ON LEAVE TODAY");
+            break;
+             case Status.avaliable:
+            Console.WriteLine("AVALIABLE TODAY");
+            break;
+             case Status.holiday:
+            Console.WriteLine("ON HOLIDAY TRIP");
+            break;
+             case Status.Wfh:
+            Console.WriteLine("WORK FROM HOME");
+            break;
+            default:
+            Console.WriteLine("NTG");
+            break;
+        }
+    }
+}

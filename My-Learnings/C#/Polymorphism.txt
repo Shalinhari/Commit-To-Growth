@@ -1,0 +1,33 @@
+using System;
+public class Polymorphism
+{
+    public virtual void Language()
+    {
+        Console.WriteLine("Java");
+    }
+}
+public class Python : Polymorphism
+{
+    public override void Language()
+    {
+        Console.WriteLine("Python");
+    }
+}
+public class C : Polymorphism
+{
+    public override void Language()
+    {
+        Console.WriteLine("C++");
+    }
+    static void Main(string[] args)
+    {
+        Polymorphism[] obj = new Polymorphism[3];
+        obj[0] = new Python();
+        obj[1] = new C();
+        obj[2]=new Polymorphism();
+        foreach(Polymorphism i in obj)
+        {
+            i.Language();
+        }
+    }
+}

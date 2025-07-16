@@ -1,0 +1,28 @@
+using System;
+public class GetAndSet{
+    private int accountno;
+    private int pass;
+    protected int balance;
+    public int GetAccountNo(){
+        return accountno;
+    }
+    public int GetPass(){
+        return pass;
+    }
+    public int GetBalance(){
+        return balance;
+    }
+    public GetAndSet(){
+        
+    }
+    public GetAndSet(int no,int pas, int bal){
+        accountno=no;
+        pass=pas;
+        balance=bal;
+    }
+    public static void Main(string []args){
+        GetAndSet obj = new GetAndSet(1,2,500);
+        Console.WriteLine(obj.GetBalance());
+        
+    }
+}

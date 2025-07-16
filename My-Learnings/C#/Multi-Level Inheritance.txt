@@ -1,0 +1,23 @@
+using System;
+public class Vehicle{
+    //multi-level
+    public void Start(){
+        Console.WriteLine("--Vehicle started--");
+    }
+}
+public class Car:Vehicle{
+    public void Off(){
+        Console.WriteLine("--vehicle turned off--");
+    }
+}
+public class Truck:Car{
+    public void Accelerate(){
+        Console.WriteLine("--Raising Sound--");
+    }
+    static void Main(string []args){
+        Truck obj = new Truck();
+        obj.Start();
+        obj.Accelerate();
+        obj.Off();
+    }
+}

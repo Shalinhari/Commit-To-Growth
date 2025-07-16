@@ -1,0 +1,22 @@
+using System;
+public class Animals{
+    //hierachy
+    public void Greetings(){
+        Console.WriteLine("Animals");
+    }
+}
+public class Dog:Animals{
+       public void Speak(){
+           Console.WriteLine("barks");
+       }
+}
+public class Cat:Animals{
+    public void Speak(){
+        Console.WriteLine("Meou...!");
+    }
+    static void Main(string[]args){
+        Cat obj = new Cat();
+        obj.Greetings();
+        obj.Speak();
+    }
+}

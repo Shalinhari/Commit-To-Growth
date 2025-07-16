@@ -1,0 +1,32 @@
+using System;
+public class Nullable
+{
+   public static int ? FineGenerator(int ? value)
+    {
+        if(value.HasValue)
+        {
+            Console.WriteLine("Has value {0}", value);
+            return 0;
+        }else
+        {
+            return null;
+        }
+        
+    }
+    public static void Main(string[] args)
+    {
+        int a = 1;
+        Console.WriteLine(a);
+        int? b= null;
+        if (b.HasValue)
+        {
+            Console.WriteLine("B contains value {b}", b);
+        }
+        else
+        {
+            Console.WriteLine("B Doesn contain value {0} only value  {1} has value", b,a);
+        }
+        int? fine = null;
+        FineGenerator(fine);
+    }
+}

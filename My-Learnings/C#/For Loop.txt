@@ -1,0 +1,51 @@
+using System;
+
+public class HelloWorld
+{ 
+    static void OddNumbers(int a){
+        for(int i=0;i<a;i++){
+            if(i%2==1){
+                Console.Write("ODD NUMBERS ARE:");
+                Console.Write(i+" ");
+            }
+            Console.WriteLine();
+        }
+    }
+     static void EvenNumbers(int a) {
+        for(int i=0;i<a;i++){
+            if(i%2==0){
+                Console.Write("Even NUMBERS ARE:");
+                Console.Write(i+" ");
+            }
+            Console.WriteLine();
+        }
+     }
+     static void PrimeNumbers(int a)
+         {
+             int count=0;
+             for(int i=2;i<a/2;i++){
+                 if(a%i==0){
+                  count ++;
+                 }
+                 if(count==0){
+                     Console.WriteLine("Prime Numbers are:");
+                     Console.WriteLine(i);
+                 }
+                 }
+            }
+         
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a Number :");
+        int num=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Select the following condition to perform:1-Odd number 2-Even number 3-Prime number");
+        int choice=Convert.ToInt32(Console.ReadLine());
+        if(choice==1){
+            OddNumbers(num);
+        }else if(choice==2){
+            EvenNumbers(num);
+        }else if(choice==3){
+            PrimeNumbers(num);
+        }
+    }
+}

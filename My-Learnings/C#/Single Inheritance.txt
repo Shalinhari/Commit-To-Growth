@@ -1,0 +1,26 @@
+using System;
+public class Base{
+    //single
+    private int number=5;
+    private int number2=5;
+    
+    public void Greetings(){
+        Console.WriteLine("WELCOME ALL !, NICE TO MEET YOU");
+    }
+        public  int getNumber(){
+            return number;
+        }
+        public int getNumber2(){
+            return number2;
+        }
+    
+}
+public class Derived : Base{
+    static void Main(string[]args){
+        Derived obj = new Derived();
+        obj.Greetings();
+        int sum=obj.getNumber()+obj.getNumber2();
+        Console.WriteLine("SUM:"+sum);
+        
+    }
+}

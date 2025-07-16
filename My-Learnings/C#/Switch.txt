@@ -1,0 +1,40 @@
+using System;
+public class SwitchProgram
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a number between  1 to 7 to know the days of the week");
+        int day=Convert.ToInt32(Console.ReadLine());
+        string result;
+        switch(day)
+        {
+            case 1:
+                result = "sunday";
+                break;
+                case 2:
+                result = "monday";
+                break;
+                case 3:
+                result = "tuesday";
+                break;
+                case 4:
+                result = "wednesday";
+                break;
+                case 5:
+                result = "thursday";
+                break;
+                case 6:
+                result = "friday";
+                break;
+                case 7:
+                result = "saturday";
+                break;
+            default:
+                result = "PLEASE ENTER A VALID NUMBER";
+                break;
+        }
+        Console.WriteLine(result);
+    }
+    
+
+}

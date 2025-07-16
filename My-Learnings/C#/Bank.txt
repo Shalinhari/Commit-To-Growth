@@ -1,0 +1,100 @@
+using System;
+using System.Collections;
+public class Example
+{
+    static int balance =0;
+    Hashtable user = new Hashtable();
+    static void  WithDrawal(){
+        Console.WriteLine("Enter the amount for withdraw");
+        int amount = Convert.ToInt32(Console.ReadLine());
+        if(amount>=balance){
+            Console.WriteLine("Insufficient balance");
+        }else if(amount<=balance){
+            balance-=amount;
+            Console.WriteLine("AMOUNT WITHDRAWED:{0}",amount);
+        }
+        Balance();
+    }
+    static void Deposit(){
+        Console.WriteLine("Enter the amount for Deposit");
+        int amount=Convert.ToInt32(Console.ReadLine());
+        if(amount<5000){
+            balance+=amount;
+        }else if(amount>=5000 && amount<10000){
+           balance+=amount;
+        }else if(amount>10001){
+           balance+=amount;
+        }
+        Console.WriteLine("Amount successfully deposited");
+        Balance();
+        WithDrawal();
+    }
+    static void Balance(){
+        Console.WriteLine("--BALANCE ENQUIRY--");
+        Console.WriteLine("YOUR AVALIABLE BALANCE IS:{0}",balance);
+    }
+    
+    public static void Main(string[] args)
+    {
+        Example obj = new Example();
+        Console.WriteLine("----WELCOME---");
+        int choice = Convert.ToInt32(Console.ReadLine());
+        if (choice == 2)
+        {
+            obj.SignUp();
+        }
+        else
+        {
+    Console.WriteLine("Enter a valid number as mentioned above");
+        }
+    }
+    void SignUp()
+    {
+        Console.WriteLine("--NEW USER REGISTERATION--");
+        Console.WriteLine();
+        Console.WriteLine("Enter the user Id:");
+        string userId = Console.ReadLine();
+        Console.WriteLine("Enter the password:");
+        string password = Console.ReadLine();
+        user.Add(userId, password);
+        Console.WriteLine();
+        Console.WriteLine("User added Successfully");
+        Console.WriteLine();
+        this.Login(); 
+    }
+    void Login()
+    {
+        Console.WriteLine();
+        Console.WriteLine("--LOGIN--");
+        Console.WriteLine();
+        Console.WriteLine("Enter your user Id:");
+        string userid = Console.ReadLine();
+        if (user.ContainsKey(userid))
+        {
+            Console.WriteLine("Enter your Password:");
+            string pass = Console.ReadLine();
+            if (user.ContainsValue(pass))
+            {
+                Console.WriteLine("LOGIN SUCCESSFUL");
+                Console.WriteLine("1-WithDrawal OR 2-Deposit OR 3-balance");
+                int choice=Convert.ToInt32(Console.ReadLine());
+                if(choice==1){
+                  WithDrawal();
+                }else if(choice==2){
+                    Deposit();
+                }else if(choice==3){
+                    Balance();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Incorrect Password");
+            }
+        }
+        else
+        {
+            Console.WriteLine("User Id Doesn't exist");
+            this.SignUp(); 
+        }
+    }
+}

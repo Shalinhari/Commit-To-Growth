@@ -1,0 +1,39 @@
+using System;
+
+
+delegate void Add(int a,int b);
+
+
+public class Program
+{
+
+    public void Adding(int a , int b)
+    {
+        Console.WriteLine(a + b);
+    }
+
+
+    public void Subtraction(int a , int b)
+    {
+          Console.WriteLine(a - b);
+    }
+
+
+    public static void Main(string[] args)
+    {
+
+dell
+        Program obj= new Program();
+
+        Add obj_del;
+        Add del;
+
+        del = obj.Subtraction;
+        del(10, 2);
+
+        obj_del = obj.Adding;
+        obj_del += obj.Subtraction;
+
+        obj_del.Invoke(5, 5);
+    }
+}

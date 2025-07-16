@@ -1,0 +1,19 @@
+#define CSharp
+#undef CPlusPlus
+using System;
+
+public class Directive
+{
+    public static void Main()
+    {
+#if !CSharp
+        Console.WriteLine("C-sharp training");
+#elif CPlusPlus
+        Console.WriteLine("C++ training");
+#elif CSharp && !CPlusPlus
+        Console.WriteLine("only C# training");
+#elif CPlusPlus && !CSharp
+        Console.WriteLine("only C++ training");
+#endif
+    }
+}

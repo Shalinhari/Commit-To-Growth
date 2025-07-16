@@ -1,0 +1,22 @@
+using System;
+
+public class Multi {
+    static void Main(string[] args) {
+        int row = 2;
+        int col = 2;
+        int[,] array1 = new int[,] {{1, 2}, {2, 2}};
+        int[,] array2 = new int[,] {{4, 5}, {8, 9}};
+        int[,] sum = new int[row, col];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                sum[i, j] = array1[i, j] + array2[i, j];
+            }
+        }
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                Console.Write(sum[i, j] + " ");
+            }
+            Console.WriteLine(); 
+        }
+    }
+}

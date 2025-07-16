@@ -1,0 +1,24 @@
+using System;
+public class MultiDelegate
+{
+    delegate void Greeting(string s);
+    public void Good(String s)
+    {
+        Console.WriteLine("Hello"+s);
+    }
+    public void Bad(string s)
+    {
+        Console.WriteLine("Hi");
+    }
+    public static void Main(string[] args)
+    {
+        MultiDelegate obj = new MultiDelegate();
+
+        Greeting obj1, obj2, obj3;
+
+        obj1 = obj.Good;
+        obj2 = obj.Bad;
+        obj3 = obj1+obj2;
+        obj3.Invoke("shalin");
+    }
+}

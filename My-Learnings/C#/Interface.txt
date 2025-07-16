@@ -1,0 +1,29 @@
+using System;
+
+// another way to achieve abstraction is through interface.
+// interface can contain properties and methods but not fields 
+//interface cannot be used to create object 
+//interface are by default abstract class and public 
+// all the method in interface should be override
+
+
+interface Icar
+{
+    void Sound();
+}
+class Car : Icar
+{
+    public void Sound()
+    {
+        Console.WriteLine("--!!!!--");
+    }
+}
+class Bike : Car
+{
+    public static void Main(string[] args)
+    {
+        Bike bike = new Bike();
+        Car car = new Car();
+        bike.Sound();
+    }
+}
