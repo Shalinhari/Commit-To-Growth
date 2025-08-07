@@ -1,4 +1,4 @@
-# two Sum
+# Valid Parenthese
 
 This is the solution for valid parentheses
 
