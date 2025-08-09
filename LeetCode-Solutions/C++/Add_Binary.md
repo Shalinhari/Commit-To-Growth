@@ -1,4 +1,4 @@
-# two Sum
+# Add Binary
 
 This is the solution for Adding Binary
 

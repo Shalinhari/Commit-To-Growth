@@ -1,4 +1,4 @@
-# two Sum
+# Valid Palindrome
 
 This is the solution for valid parentheses
 

@@ -1,4 +1,4 @@
-# two Sum
+# Fibanocci
 
 This is the solution for Fibanocci series
 

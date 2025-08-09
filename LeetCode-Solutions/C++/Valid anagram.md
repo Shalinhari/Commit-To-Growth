@@ -1,4 +1,4 @@
-# two Sum
+# Valid Anagram
 
 This is the solution for valid Anagram
 

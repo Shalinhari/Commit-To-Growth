@@ -1,4 +1,4 @@
-# two Sum
+# Find First Occurence in the string
 
 This is the solution for finding the first occurence in the string
 

@@ -1,4 +1,4 @@
-# two Sum
+# Add Strings
 
 This is the solution for add strings
 

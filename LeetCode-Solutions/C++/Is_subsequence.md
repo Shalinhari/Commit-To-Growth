@@ -1,4 +1,4 @@
-# two Sum
+# Is Subsequence
 
 This is the solution for finding the find is Subsequence
 
